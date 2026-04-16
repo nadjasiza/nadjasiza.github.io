@@ -192,7 +192,8 @@
                 </ul>
             </div>
         </div>
-            <img src="https://github.com/user-attachments/assets/c1c23834-358d-4466-b36d-e51669f6df9b">
+        <div class="visual-image-area">
+            <img src="https://raw.githubusercontent.com/nadjasiza/my-portfolio-01/main/Assets/IMG1961.JPG" alt="Eunbyeol Song Portfolio Image">
         </div>
     </div>
     
