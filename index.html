@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eunbyeol SONG | Portfolio Index</title>
     <style>
+        /* [기존 스타일 유지] */
         * { box-sizing: border-box; }
         body { 
             font-family: "Helvetica", Arial, sans-serif; 
@@ -13,52 +14,30 @@
             margin: 0; padding: 0; 
             word-break: keep-all; scroll-behavior: smooth;
         }
-
-        /* 공통 그리드 시스템: 6분할 */
         .main-index, .main-visual-container, footer { 
             padding: 0 50px 10px 50px;
             display: grid; 
             grid-template-columns: repeat(6, 1fr); 
             gap: 20px; 
         }
-
-        /* 인덱스 배경 및 푸터 배경 (미색) */
         .main-index, footer { background-color: #f9f9f9; }
-
-        /* 사이드바 스타일 */
         .sidebar { grid-column: 1; padding-top: 175px; }
         .sidebar-name, .footer-sidebar .sidebar-name { font-weight: bold; display: block; margin-bottom: 13px; text-transform: uppercase; }
         .sidebar-links div { margin-bottom: 3px; }
         .sidebar a, footer a { text-decoration: none; color: inherit; border-bottom: 1px solid #ccc; }
-
-        /* 인덱스 컬럼 배치 */
         .column-context { grid-column: 3; }
         .column-archive-1 { grid-column: 4; }
         .column-archive-2 { grid-column: 5; }
         .column-article { grid-column: 6; }
-
-        .column-title { 
-            font-weight: bold; margin-top: 30px; margin-bottom: 100px; 
-            text-transform: uppercase; line-height: 1.2; height: 35px; 
-        }
-
+        .column-title { font-weight: bold; margin-top: 30px; margin-bottom: 100px; text-transform: uppercase; line-height: 1.2; height: 35px; }
         .item { margin-bottom: 60px; }
         .item-num { display: block; font-weight: bold; margin-bottom: 5px; }
         .item-name { display: block; margin-bottom: 3px; }
         .item-year, .txt-gray { color: #888; }
         .item-year { display: block; font-size: 12px; margin-top: 10px; }
-        .item-link { text-decoration: none; color: inherit; }
-        .item-link:hover { opacity: 0.5; }
-
-        /* 메인 비주얼 섹션 (흰색 배경) */
-        .main-visual-container {
-            background-color: #ffffff; 
-            padding: 120px 50px;
-            align-items: start;
-        }
+        .main-visual-container { background-color: #ffffff; padding: 120px 50px; align-items: start; }
         .visual-title { grid-column: 1; }
         .visual-title h3 { font-size: 13px; font-weight: bold; line-height: 1.5; margin: 0; }
-        
         .visual-detail { grid-column: 2 / span 2; padding-right: 20px; }
         .detail-section { margin-bottom: 30px; }
         .detail-section h4 { font-size: 12px; font-weight: bold; margin-bottom: 10px; }
@@ -66,17 +45,11 @@
         .detail-section li { margin-bottom: 8px; position: relative; padding-left: 12px; }
         .detail-section li::before { content: "•"; position: absolute; left: 0; color: #888; }
 
-        /* 이미지 영역: 오른쪽 3칸 차지 */
+        /* 이미지 영역 */
         .visual-image-area { grid-column: 4 / span 3; }
         .visual-image-area img { width: 100%; height: auto; display: block; }
 
-        /* 푸터 스타일 */
-        footer { 
-            padding: 100px 50px; 
-            margin-top: 150px;
-            align-items: start;
-            border-top: none; 
-        }
+        footer { padding: 100px 50px; margin-top: 150px; align-items: start; }
         .footer-sidebar { grid-column: 1; padding-top: 15px; }
         .footer-exp { grid-column: 2 / span 2; }
         .footer-desc-area { grid-column: 4 / span 3; }
@@ -85,21 +58,10 @@
         .exp-item { margin-bottom: 15px; display: block; }
         .exp-item span { display: block; }
         .desc-text { line-height: 1.6; color: #1a1a1a; margin-bottom: 15px; }
-
-        #footer-anchor { scroll-margin-top: 50px; }
-        .footer-bottom { 
-            grid-column: 1 / -1; 
-            display: flex; 
-            justify-content: flex-end; 
-            padding-top: 80px; 
-            font-size: 12px;
-        }
-        .footer-bottom a { border-bottom: none; }
+        .footer-bottom { grid-column: 1 / -1; display: flex; justify-content: flex-end; padding-top: 80px; }
 
         @media (max-width: 1400px) {
             .main-index, .main-visual-container, footer { grid-template-columns: 1fr 1fr; }
-            .sidebar, .footer-sidebar, .visual-title { grid-column: 1; padding-top: 20px; }
-            .column-context, .footer-exp, .visual-detail { grid-column: 2; }
             .visual-image-area { grid-column: 1 / span 2; margin-top: 40px; }
         }
     </style>
@@ -107,54 +69,7 @@
 <body>
 
     <div class="main-index" id="top">
-        <div class="sidebar">
-            <span class="sidebar-name">Eunbyeol SONG</span>
-            <div class="sidebar-links">
-                <div><a href="#footer-anchor">About</a></div>
-                <div><a href="mailto:your-email@example.com">Mail</a>, <a href="https://github.com/nadjasiza">GitHub</a></div>
-            </div>
         </div>
-
-        <div class="column column-context">
-            <div class="column-title">I<br>Project<br>Context</div>
-            <div class="item">
-                <span class="item-num">1</span>
-                <a href="project-01.html" class="item-link">
-                    <span class="item-name">EBS 신규 플랫폼<br>런칭 & 고도화</span>
-                    <span class="item-year">2025-2023</span>
-                </a>
-            </div>
-            <div class="item">
-                <span class="item-num">2</span>
-                <span class="item-name">서울시 공유공간 조성<br>& 수탁운영</span>
-                <span class="item-year">2021-2018</span>
-            </div>
-        </div>
-
-        <div class="column column-archive-1">
-            <div class="column-title">II<br>Project<br>Archive</div>
-            <div class="item"><span class="item-num">3</span><span class="item-name">B2G·B2B 전략 수주<br>RFP 기반 비즈니스<br>모델 설계</span><span class="item-year">2025-2023</span></div>
-            <div class="item"><span class="item-num">4</span><span class="item-name">사용자 데이터 기반<br>서비스 고도화<br>& 인앱 콘텐츠 기획</span><span class="item-year">2025-2023</span></div>
-            <div class="item"><span class="item-num">5</span><span class="item-name">플랫폼 사업<br>전주기 운영</span><span class="item-year">2025-2024</span></div>
-            <div class="item"><span class="item-num">6</span><span class="item-name">브랜드 아이덴티티<br>구축 & 통합 전략</span><span class="item-year">2024-2023</span></div>
-            <div class="item"><span class="item-num">7</span><span class="item-name">O2O 통합 마케팅<br>& 오프라인 경험 디렉팅</span><span class="item-year">2024-2023</span></div>
-            <div class="item"><span class="item-num">8</span><span class="item-name">전략적 브랜드 커뮤니케이션<br>& 채널 관리</span><span class="item-year">2024-2023</span></div>
-        </div>
-
-        <div class="column column-archive-2">
-            <div class="column-title" style="visibility: hidden;">II<br>Cont.</div>
-            <div class="item"><span class="item-num">9</span><span class="item-name">도시기획 연구<br>& 공유공간 조성</span><span class="item-year">2021-2018</span></div>
-            <div class="item"><span class="item-num">10</span><span class="item-name">로컬 임팩트 사업<br>기획 & 운영</span><span class="item-year">2021-2019</span></div>
-        </div>
-
-        <div class="column column-article">
-            <div class="column-title">III<br>Article</div>
-            <div class="item"><span class="item-num">11</span><span class="item-name">도시식물탐사</span><span class="item-year">2026-2023</span></div>
-            <div class="item"><span class="item-num">12</span><span class="item-name">지구의 금요극장</span><span class="item-year">2026</span></div>
-            <div class="item"><span class="item-num">13</span><span class="item-name">Lost in Frenchlation</span><span class="item-year">2025</span></div>
-            <div class="item"><span class="item-num">14</span><span class="item-name">서신교환</span><span class="item-year">2023</span></div>
-        </div>
-    </div>
 
     <div class="main-visual-container">
         <div class="visual-title">
@@ -166,81 +81,17 @@
         <div class="visual-detail">
             <div class="detail-section">
                 <h4>◼︎ 시작 배경과 목표</h4>
-                <ul>
-                    <li>에듀테크 플랫폼 '위캔버스'의 공교육 현장 안착 및 시장 점유율 확보를 위해 대규모 공공 사업 수주와 민간 전략 제휴가 필수적이었습니다.</li>
-                    <li>정부 부처의 RFP(제안요청서)에 최적화된 비즈니스 모델 설계가 과제였습니다.</li>
-                </ul>
-            </div>
-            <div class="detail-section">
-                <h4>◼︎ 역할 및 기여도</h4>
-                <ul>
-                    <li>B2G RFP 대응 및 수주 전략 설계 및 제안서 작성</li>
-                    <li>B2B 전략 제휴 및 계약 체결 사용권 계약(Licensing) 조건 협의 및 시용권 공급 계약 체결 주도</li>
-                    <li>사업 타당성 분석 제안 요청에 기반한 사업비 산출 및 연간 실행 로드맵 수립</li>
-                    <li>대기업 SI 조직 및 기관 담당자와의 다자간 협업 프로세스 관리</li>
-                </ul>
-            </div>
-            <div class="detail-section">
-                <h4>◼︎ 산출물</h4>
-                <ul>
-                    <li>RFP 기반 B2G 사업 제안서 <span class="txt-gray">(NIPA 메타버스 선도 프로젝트 등)</span></li>
-                    <li>공공기관용 서비스 사용권 계약서 <span class="txt-gray">(전국 시도교육청)</span></li>
-                    <li>브랜디드 IP 콘텐츠 제작 및 활성화 제안서 <span class="txt-gray">(국립생태원 등)</span></li>
-                </ul>
-            </div>
-            <div class="detail-section">
-                <h4>◼︎ 결과 및 성과</h4>
-                <ul>
-                    <li>총 10억 규모 사업 수주 <span class="txt-gray">(강원도교육청 등)</span></li>
-                    <li>전국 시도교육청 및 기업 대상 B2B/B2G 제휴 연간 6건 체결</li>
-                </ul>
-            </div>
+                <ul><li>에듀테크 플랫폼 '위캔버스'의 공교육 현장 안착을 위한 수주 전략 수립</li></ul>
+                </div>
         </div>
+
         <div class="visual-image-area">
-            <img src="https://github.com/nadjasiza/nadjasiza.github.io/blob/main/Assets/1-%E1%84%80%E1%85%AE%E1%86%A8%E1%84%85%E1%85%B5%E1%86%B8%E1%84%89%E1%85%A2%E1%86%BC%E1%84%90%E1%85%A2%E1%84%8B%E1%85%AF%E1%86%AB.png?raw=true" alt="B2G B2B 전략 수주 프로젝트 관련 이미지">
+            <img src="https://raw.githubusercontent.com/nadjasiza/nadjasiza.github.io/main/Assets/1-%EA%B5%AD%EB%A6%BD%EC%83%9D%ED%83%9C%EC%9B%90.png" alt="프로젝트 이미지">
         </div>
     </div>
 
     <footer id="footer-anchor">
-        <div class="footer-sidebar">
-            <span class="sidebar-name">Eunbyeol SONG</span>
-            <div class="sidebar-links">
-                <div><a href="#top">About</a></div>
-                <div><a href="mailto:your-email@example.com">Mail</a>, <a href="https://github.com/nadjasiza">GitHub</a></div>
-            </div>
-        </div>
-
-        <div class="footer-col footer-exp">
-            <h3>EXPERIENCE</h3>
-            <div class="exp-text">
-                <div class="exp-item">
-                    <span class="txt-gray">2025﹣2023</span>
-                    <span>Korean Educational Broadcasting System</span>
-                    <span>Chief Producer</span>
-                </div>
-                <div class="exp-item">
-                    <span class="txt-gray">2022﹣2018</span>
-                    <span>Coop. SeongbukSinna</span>
-                    <span>Project Manager</span>
-                </div>
-                <div class="exp-item">
-                    <span class="txt-gray">2018﹣2012</span>
-                    <span>Bachelor of Architecture</span>
-                </div>
-            </div>
-        </div>
-
-        <div class="footer-col footer-desc-area">
-            <h3>Business Development & Project Manager</h3>
-            <p class="desc-text">ICT·로컬 비즈니스 분야에서 사업 개발과 브랜드 성장을 리드해 온 6년 차 프로젝트 매니저입니다. 건축을 전공하며 훈련했던 구조적이고 통합적으로 보려는 태도는 자연스럽게 도시에 대한 관심으로 확장되었고, 로컬 비즈니스 분야에서 다수의 사업을 기획하고 실행하며 프로젝트 매니지먼트 <span class="txt-gray">Project Management</span> 경험을 만들었습니다.</p>
-            <p class="desc-text">이후 팬데믹을 기점으로 빠르게 재편되는 기술의 사회적 흐름에 대응하고 지속적으로 브랜드의 성장을 견인하는 ICT 분야에서 PMO <span class="txt-gray">Project Management Office</span> 로 역할을 확장하여, 플랫폼의 런칭부터 고도화에 이르는 플랫폼 초기 2년의 전주기를 리드하였습니다. 이 과정에서 B2G·B2B 파트너십 기반의 BD <span class="txt-gray">Business Development</span> 역할을 동시에 수행하며 서비스를 확장하고, 브랜드 성장에 기여하는 ‘밸류 체인 고도화’ 중심의 기획 역량을 축적하였습니다.</p>
-            <p class="desc-text">비즈니스의 결과가 다시 새로운 기회로 연결되는 선순환 구조를 관리하며 중·장기적으로 브랜드의 성장에 기여하는 프로젝트 매니저로 업무 경험을 만들어가고 싶습니다.</p>
-        </div>
-
-        <div class="footer-bottom">
-            <div><a href="#top">Top ↑</a></div>
-        </div>
-    </footer>
+        </footer>
 
 </body>
 </html>
