@@ -13,22 +13,23 @@
             word-break: keep-all; scroll-behavior: smooth;
         }
 
-        /* 1. 메인 인덱스: 6분할 그리드 시스템 */
-        .main-index { 
-            padding: 0 100px 10px 50px;
+        /* 1. 메인 인덱스 및 푸터 공통: 6분할 그리드 시스템 */
+        .main-index, footer { 
+            padding: 0 50px 10px 50px;
             display: grid; 
             grid-template-columns: repeat(6, 1fr); 
             gap: 20px; 
         }
 
         /* Eunbyeol SONG: 1번째 칸 */
-        .sidebar { grid-column: 1; padding-top: 175px; }
+        .sidebar, .footer-sidebar { grid-column: 1; }
+        .sidebar { padding-top: 175px; }
         .sidebar-name { font-weight: bold; display: block; margin-bottom: 13px; text-transform: uppercase; }
         .sidebar-links div { margin-bottom: 3px; }
-        .sidebar a { text-decoration: none; color: inherit; border-bottom: 1px solid #ccc; }
+        .sidebar a, footer a { text-decoration: none; color: inherit; border-bottom: 1px solid #ccc; }
 
-        /* I Project Context: 3번째 칸 */
-        .column-context { grid-column: 3; }
+        /* I Project Context & EXPERIENCE: 3번째 칸 */
+        .column-context, .footer-exp { grid-column: 3; }
         
         /* II Project Archive: 4번째 칸 */
         .column-archive-1 { grid-column: 4; }
@@ -47,48 +48,29 @@
         .item { margin-bottom: 60px; }
         .item-num { display: block; font-weight: bold; margin-bottom: 5px; }
         .item-name { display: block; margin-bottom: 3px; }
-        .item-year { display: block; color: #888; font-size: 12px; margin-top: 10px; }
+        .item-year, .txt-gray { color: #888; }
+        .item-year { display: block; font-size: 12px; margin-top: 10px; }
         
         .item-link { text-decoration: none; color: inherit; }
         .item-link:hover { opacity: 0.5; }
 
-        /* 2. 푸터: 6분할 그리드 시스템 */
+        /* 2. 푸터 특화 설정 */
         footer { 
             border-top: 1px solid #000; 
             padding: 60px 50px; 
             margin-top: 150px;
-            display: grid;
-            grid-template-columns: repeat(6, 1fr); 
-            gap: 20px;
             align-items: start;
         }
 
-        /* ★ 푸터 링크 스타일 (인덱스와 동일하게 수정) ★ */
-        footer a { 
-            text-decoration: none; 
-            color: #1a1a1a; 
-            border-bottom: 1px solid #ccc; 
-        }
-        footer a:hover { opacity: 0.5; }
-
-        /* 푸터 좌측 정보: 1번째 칸 */
-        .footer-sidebar { grid-column: 1; }
-        
-        /* EXPERIENCE: 3번째 칸 (인덱스와 열 맞춤) */
-        .footer-exp { grid-column: 3; }
-        
-        /* BD & PM 및 본문: 4번째~6번째 칸 */
+        /* BD & PM 및 본문: 오른쪽 3칸 차지 (4번째부터 끝까지) */
         .footer-desc-area { grid-column: 4 / span 3; }
 
         #footer-anchor { scroll-margin-top: 50px; }
         .footer-col h3 { font-size: 13px; font-weight: bold; margin-bottom: 25px; text-transform: uppercase; }
         .exp-text { line-height: 1.2; color: #1a1a1a; margin: 0; }
         .exp-text span { display: block; margin-bottom: 2px; }
-        
         .desc-text { line-height: 1.6; color: #1a1a1a; margin-bottom: 15px; }
 
-        /* 최하단 바 링크는 밑줄 제외 */
-        .footer-bottom a { border-bottom: none; }
         .footer-bottom { 
             grid-column: 1 / -1; 
             display: flex; 
@@ -96,6 +78,7 @@
             padding-top: 80px; 
             font-size: 12px;
         }
+        .footer-bottom a { border-bottom: none; }
 
         @media (max-width: 1400px) {
             .main-index, footer { grid-template-columns: 1fr 1fr; }
@@ -176,7 +159,6 @@
 
         <div class="footer-col footer-desc-area">
             <h3>Business Development & Project Manager</h3>
-            <p class="desc-text">
             <p class="desc-text">ICT·로컬 비즈니스 분야에서 사업 개발과 브랜드 성장을 리드해 온 6년 차 프로젝트 매니저입니다. 건축을 전공하며 훈련했던 구조적이고 통합적으로 보려는 태도는 자연스럽게 도시에 대한 관심으로 확장되었고, 로컬 비즈니스 분야에서 다수의 사업을 기획하고 실행하며 프로젝트 매니지먼트 <span class="txt-gray">Project Management</span> 경험을 만들었습니다.</p>
             <p class="desc-text">이후 팬데믹을 기점으로 빠르게 재편되는 기술의 사회적 흐름에 대응하고 지속적으로 브랜드의 성장을 견인하는 ICT 분야에서 PMO <span class="txt-gray">Project Management Office</span> 로 역할을 확장하여, 플랫폼의 런칭부터 고도화에 이르는 플랫폼 초기 2년의 전주기를 리드하였습니다. 이 과정에서 B2G·B2B 파트너십 기반의 BD <span class="txt-gray">Business Development</span> 역할을 동시에 수행하며 서비스를 확장하고, 브랜드 성장에 기여하는 ‘밸류 체인 고도화’ 중심의 기획 역량을 축적하였습니다.</p>
             <p class="desc-text">비즈니스의 결과가 다시 새로운 기회로 연결되는 선순환 구조를 관리하며 중·장기적으로 브랜드의 성장에 기여하는 프로젝트 매니저로 업무 경험을 만들어가고 싶습니다.</p>
@@ -184,6 +166,7 @@
 
         <div class="footer-bottom">
             <div>Eunbyeol Song</div>
+            <div>2012 - 2026</div>
             <div><a href="#top">Top ↑</a></div>
         </div>
     </footer>
