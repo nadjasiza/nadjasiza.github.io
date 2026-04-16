@@ -3,80 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eunbyeol SONG | Index</title>
+    <title>Eunbyeol Song | Portfolio Index</title>
     <style>
         * { box-sizing: border-box; }
         body { 
             font-family: "Helvetica", Arial, sans-serif; 
             font-size: 13px; line-height: 1.4; color: #1a1a1a; 
             background-color: #fcfcfc; margin: 0; padding: 0; 
-            word-break: keep-all; scroll-behavior: smooth;
+            word-break: keep-all; 
         }
 
-        /* 1. 그리드 조정: 첫 번째 열 너비를 줄여 전체를 왼쪽으로 한 칸 이동 */
+        /* 1. 상단 공백 제거 및 메인 그리드 설정 */
         .main-index { 
-            padding: 0 50px 120px 50px;
+            padding: 0 50px 120px 50px; /* 상단 패딩 0 */
             display: grid; 
-            /* Eunbyeol SONG 열 너비를 600px -> 300px로 조정하여 본문을 왼쪽으로 당김 */
-            grid-template-columns: 300px 220px 220px 220px 220px; 
+            /* 이름과 I 사이 간격을 더 넓히기 위해 첫 열 너비 조정 (600px) */
+            grid-template-columns: 600px 220px 220px 220px 220px; 
             gap: 20px; 
         }
 
-        /* 2. Eunbyeol SONG 위치 정렬 */
+        /* 2. Eunbyeol Song 위치 조정 (첫 줄 항목들과 열 맞춤) */
         .sidebar { 
-            grid-column: 1; 
-            /* 타이틀 높이 + 요청하신 5줄 여백만큼 계산하여 1, 3, 9, 11번과 수평 맞춤 */
-            padding-top: 175px; 
+            grid-column: 1;
+            /* I, II, III 타이틀 높이(약 138px)만큼 내려서 1, 3, 9, 11번과 수평 맞춤 */
+            padding-top: 138px; 
         }
-        .sidebar-name { font-weight: bold; display: block; margin-bottom: 13px; text-transform: uppercase; }
+        .sidebar-name { font-weight: bold; display: block; margin-bottom: 13px; } /* 이름 아래 메일 폰트만큼(13px) 간격 */
         .sidebar-links div { margin-bottom: 3px; }
         .sidebar a { text-decoration: none; color: inherit; border-bottom: 1px solid #ccc; }
 
-        /* 3. 타이틀 아래 여백 5줄(80px) 적용 */
         .column-title { 
             font-weight: bold; 
-            margin-top: 60px; 
-            margin-bottom: 80px; /* 약 5줄 정도의 여백 */
-            text-transform: uppercase; 
-            line-height: 1.2; 
-            height: 35px; 
+            margin-top: 60px; /* 상단 공백 제거 후 적절한 여백 확보 */
+            margin-bottom: 43px; /* 타이틀과 숫자 사이 간격 조정 */
+            text-transform: uppercase;
+            line-height: 1.2;
+            height: 35px; /* 타이틀 영역 높이 고정으로 하단 정렬 유지 */
         }
 
         .item { margin-bottom: 40px; }
         .item-num { display: block; font-weight: bold; margin-bottom: 5px; }
+        .item-name { display: block; margin-bottom: 2px; }
+        .item-year { display: block; color: #888; font-size: 12px; }
+        
         .item-link { text-decoration: none; color: inherit; }
         .item-link:hover { opacity: 0.5; }
 
-        /* 푸터 (기존 레이아웃 유지) */
-        footer { 
-            border-top: 1px solid #000; 
-            padding: 60px 50px; 
-            margin-top: 150px;
-            display: grid;
-            grid-template-columns: 200px 300px 1fr;
-            gap: 50px;
-        }
-        #footer-anchor { scroll-margin-top: 50px; }
+        /* 푸터 스타일 */
+        footer { border-top: 1px solid #000; padding: 80px 50px; display: grid; grid-template-columns: 200px 300px 1fr; gap: 60px; margin-top: 100px; }
         .footer-col h3 { font-size: 13px; font-weight: bold; margin-bottom: 25px; text-transform: uppercase; }
-        .footer-col p { line-height: 1.6; color: #1a1a1a; margin-top: 0; margin-bottom: 15px; }
-        .footer-bottom { grid-column: 1 / -1; display: flex; justify-content: space-between; padding-top: 60px; font-size: 12px; }
-        .footer-bottom a { text-decoration: none; color: inherit; }
+        .footer-bottom { grid-column: 1 / -1; display: flex; justify-content: space-between; padding-top: 40px; margin-top: 40px; }
 
-        @media (max-width: 1300px) {
-            .main-index, footer { grid-template-columns: 1fr; }
+        @media (max-width: 1400px) {
+            .main-index { grid-template-columns: 1fr 1fr 1fr; }
             .sidebar { padding-top: 20px; }
         }
     </style>
 </head>
 <body>
 
-    <div class="main-index" id="top">
+    <div class="main-index">
         <div class="sidebar">
-            <span class="sidebar-name">Eunbyeol SONG</span>
+            <span class="sidebar-name">Eunbyeol Song</span>
             <div class="sidebar-links">
-                <div><a href="#footer-anchor">About</a></div>
                 <div><a href="mailto:your-email@example.com">Mail</a></div>
-                <div><a href="https://instagram.com/your_id">IG</a></div>
+                <div><a href="https://github.com/nadjasiza">GitHub</a></div>
             </div>
         </div>
 
@@ -84,28 +75,44 @@
             <div class="column-title">I<br>Project<br>Context</div>
             <div class="item">
                 <span class="item-num">1</span>
-                <a href="project-01.html" class="item-link">EBS 신규 플랫폼 런칭 및 고도화</a>
+                <a href="project-01.html" class="item-link">
+                    <span class="item-name">EBS 신규 플랫폼<br>런칭 및 고도화</span>
+                    <span class="item-year">2025~2023</span>
+                </a>
             </div>
             <div class="item">
                 <span class="item-num">2</span>
-                <span>공간 조성 및 활성화 추진</span>
+                <span class="item-name">공간 조성 및 활성화 추진</span>
+                <span class="item-year">2021~2018</span>
             </div>
         </div>
 
         <div class="column">
             <div class="column-title">II<br>Project<br>Archive</div>
-            <div class="item"><span class="item-num">3</span>B2G·B2B 전략 수주</div>
-            <div class="item"><span class="item-num">4</span>사용자 데이터 기반 서비스 고도화</div>
-            <div class="item"><span class="item-num">5</span>사업 전주기 운영</div>
-            <div class="item"><span class="item-num">6</span>브랜드 아이덴티티 구축</div>
-            <div class="item"><span class="item-num">7</span>O2O 통합 마케팅</div>
-            <div class="item"><span class="item-num">8</span>전략적 브랜드 커뮤니케이션</div>
+            <div class="item">
+                <span class="item-num">3</span>
+                <span class="item-name">B2G·B2B 전략 수주<br>RFP 기반 비즈니스<br>모델 설계</span>
+            </div>
+            <div class="item">
+                <span class="item-num">4</span>
+                <span class="item-name">사용자 데이터 기반<br>서비스 고도화<br>& 인앱 콘텐츠 기획</span>
+            </div>
+            <div class="item"><span class="item-num">5</span><span class="item-name">사업 전주기 운영</span></div>
+            <div class="item"><span class="item-num">6</span><span class="item-name">브랜드 아이덴티티<br>구축 및 통합 전략</span></div>
+            <div class="item"><span class="item-num">7</span><span class="item-name">O2O 통합 마케팅<br>& 오프라인 경험 디렉팅</span></div>
+            <div class="item"><span class="item-num">8</span><span class="item-name">전략적 브랜드 커뮤니케이션<br>& 채널 관리</span></div>
         </div>
 
         <div class="column">
-            <div class="column-title" style="visibility: hidden;">II<br>Cont.</div>
-            <div class="item"><span class="item-num">9</span>도시기획 연구 & 공유공간 조성</div>
-            <div class="item"><span class="item-num">10</span>로컬 임팩트 사업 기획 및 운영</div>
+            <div class="column-title" style="visibility: hidden;">II<br>Archive Cont.</div>
+            <div class="item">
+                <span class="item-num">9</span>
+                <span class="item-name">도시기획 연구<br>& 공유공간 조성</span>
+            </div>
+            <div class="item">
+                <span class="item-num">10</span>
+                <span class="item-name">로컬 임팩트 사업<br>기획 및 운영</span>
+            </div>
         </div>
 
         <div class="column">
@@ -117,21 +124,19 @@
         </div>
     </div>
 
-    <footer id="footer-anchor">
+    <footer>
         <div class="footer-col">
             <h3>EXPERIENCE</h3>
             <p>Korean Educational Broadcasting System, EBS CP<br>Coop. Seongbuk Sinna PM<br>Bachelor of Architecture</p>
         </div>
         <div class="footer-col">
             <h3>Business Development & Project Manager</h3>
-        </div>
-        <div class="footer-col">
-            <p>ICT·로컬 비즈니스 분야에서 사업 개발과 브랜드 성장을 리드해 온 6년 차 프로젝트 매니저입니다...</p>
+            <p>비즈니스의 결과가 다시 새로운 기회로 연결되는 선순환 구조를 관리하며 중·장기적으로 브랜드의 성장에 기여하는 PM으로 업무 경험을 만들어가고 싶습니다.</p>
         </div>
         <div class="footer-bottom">
             <div>송은별</div>
             <div>2012-2026</div>
-            <div><a href="#top">Top ↑</a></div>
+            <div><a href="#" style="text-decoration:none; color:inherit;">Top ↑</a></div>
         </div>
     </footer>
 
