@@ -9,25 +9,27 @@
         body { 
             font-family: "Helvetica", Arial, sans-serif; 
             font-size: 12px; line-height: 1.4; color: #1a1a1a; 
-            background-color: #f9f9f9; /* 기본 미색 배경 설정 */
+            background-color: #f9f9f9; /* 요청하신 미색 배경 */
             margin: 0; padding: 0; 
             word-break: keep-all; scroll-behavior: smooth;
         }
 
-        /* 1. 인덱스 섹션: 미색 배경 유지 */
-        .main-index { 
-            background-color: #f9f9f9; /* 미색 */
-            padding: 0 50px 100px 50px;
+        /* 메인 인덱스 및 푸터 공통: 6분할 그리드 */
+        .main-index, footer { 
+            padding: 0 50px 10px 50px;
             display: grid; 
             grid-template-columns: repeat(6, 1fr); 
             gap: 20px; 
+            background-color: #f9f9f9;
         }
 
+        /* 사이드바 스타일 */
         .sidebar { grid-column: 1; padding-top: 175px; }
         .sidebar-name, .footer-sidebar .sidebar-name { font-weight: bold; display: block; margin-bottom: 13px; text-transform: uppercase; }
         .sidebar-links div { margin-bottom: 3px; }
         .sidebar a, footer a { text-decoration: none; color: inherit; border-bottom: 1px solid #ccc; }
 
+        /* 인덱스 컬럼 배치 */
         .column-context { grid-column: 3; }
         .column-archive-1 { grid-column: 4; }
         .column-archive-2 { grid-column: 5; }
@@ -41,21 +43,21 @@
         .item { margin-bottom: 60px; }
         .item-num { display: block; font-weight: bold; margin-bottom: 5px; }
         .item-name { display: block; margin-bottom: 3px; }
-        .item-year, .txt-gray { color: #888; }
+        .item-year, .txt-gray { color: #888; } 
         .item-year { display: block; font-size: 12px; margin-top: 10px; }
+        
         .item-link { text-decoration: none; color: inherit; }
         .item-link:hover { opacity: 0.5; }
 
-        /* 2. 메인 비주얼 섹션: 흰색 배경 및 구분선 제거 */
+        /* 메인 비주얼 섹션 (흰색 배경 및 그리드) */
         .main-visual-container {
-            background-color: #ffffff; /* 흰색 배경 */
+            background-color: #ffffff; 
             padding: 120px 50px;
             display: grid;
             grid-template-columns: repeat(6, 1fr);
             gap: 20px;
             align-items: start;
         }
-
         .visual-title { grid-column: 1; }
         .visual-title h2 { font-size: 13px; font-weight: bold; line-height: 1.4; margin: 0; }
         .visual-detail { grid-column: 2 / span 2; padding-right: 20px; }
@@ -64,44 +66,49 @@
         .detail-section ul { list-style: none; padding: 0; margin: 0; }
         .detail-section li { margin-bottom: 8px; position: relative; padding-left: 12px; }
         .detail-section li::before { content: "•"; position: absolute; left: 0; color: #888; }
-
         .visual-image-area { grid-column: 4 / span 3; }
         .visual-image-area img { width: 100%; height: auto; display: block; }
 
-        /* 3. 푸터 섹션: 미색 배경 및 구분선 제거 */
+        /* 푸터 스타일 */
         footer { 
-            background-color: #f9f9f9; /* 미색 */
-            border-top: none; /* 구분선 제거 */
             padding: 100px 50px; 
-            display: grid;
-            grid-template-columns: repeat(6, 1fr); 
-            gap: 20px;
+            margin-top: 150px;
             align-items: start;
+            /* 구분선 제거 요청 반영 */
+            border-top: none; 
         }
 
-        .footer-sidebar { grid-column: 1; padding-top: 15px; }
-        .footer-exp { grid-column: 2 / span 2; }
-        .footer-desc-area { grid-column: 4 / span 3; }
+        /* [수정 포인트] 푸터 좌측 이름 영역: padding-top 15px */
+        .footer-sidebar { 
+            grid-column: 1; 
+            padding-top: 15px; 
+        }
+        
+        .footer-exp { grid-column: 2 / span 2; } 
+        .footer-desc-area { grid-column: 4 / span 3; } 
+
         .footer-col h3 { font-size: 13px; font-weight: bold; margin-bottom: 25px; text-transform: uppercase; }
         .exp-text { line-height: 1.6; color: #1a1a1a; margin: 0; }
         .exp-item { margin-bottom: 15px; display: block; }
         .exp-item span { display: block; }
+        
         .desc-text { line-height: 1.6; color: #1a1a1a; margin-bottom: 15px; }
 
         #footer-anchor { scroll-margin-top: 50px; }
+
         .footer-bottom { 
             grid-column: 1 / -1; 
             display: flex; 
             justify-content: space-between; 
             padding-top: 80px; 
-            font-size: 11px;
+            font-size: 12px;
         }
         .footer-bottom a { border-bottom: none; }
 
         @media (max-width: 1400px) {
-            .main-index, .main-visual-container, footer { grid-template-columns: 1fr 1fr; padding: 50px 20px; }
-            .sidebar, .footer-sidebar, .visual-title { grid-column: 1; }
-            .column-context, .footer-exp, .visual-detail { grid-column: 2; }
+            .main-index, .main-visual-container, footer { grid-template-columns: 1fr 1fr; }
+            .sidebar, .footer-sidebar { grid-column: 1; padding-top: 20px; }
+            .column-context, .footer-exp { grid-column: 2; }
             .visual-image-area { grid-column: 1 / span 2; margin-top: 40px; }
         }
     </style>
@@ -116,6 +123,7 @@
                 <div><a href="mailto:your-email@example.com">Mail</a>, <a href="https://github.com/nadjasiza">GitHub</a></div>
             </div>
         </div>
+
         <div class="column column-context">
             <div class="column-title">I<br>Project<br>Context</div>
             <div class="item">
@@ -159,8 +167,7 @@
 
     <div class="main-visual-container">
         <div class="visual-title">
-            <h2>B2G·B2B 전략 수주 및 RFP 기반 비즈니스 모델 설계</h2></div>
-        <span class="txt-gray">Strategic B2G·B2B Acquisition & RFP Response</span>
+            <h2>B2G·B2B 전략 수주 및 RFP 기반 비즈니스 모델 설계<span class="txt-gray">Strategic B2G·B2B Acquisition & RFP Response</span></h2>
         </div>
         <div class="visual-detail">
             <div class="detail-section">
@@ -175,10 +182,26 @@
                 <ul>
                     <li>B2G RFP 대응 및 수주 전략 설계 및 제안서 작성</li>
                     <li>B2B 전략 제휴 및 계약 체결 사용권 계약(Licensing) 조건 협의 및 시용권 공급 계약 체결 주도</li>
+                    <li>사업 타당성 분석 제안 요청에 기반한 사업비 산출 및 연간 실행 로드맵 수립</li>
                     <li>대기업 SI 조직 및 기관 담당자와의 다자간 협업 프로세스 관리</li>
                 </ul>
             </div>
+            <div class="detail-section">
+                <h4>◼︎ 산출물</h4>
+                <ul>
+                    <li>RFP 기반 B2G 사업 제안서 <span class="txt-gray">(NIPA 메타버스 선도 프로젝트 등)</span></li>
+                    <li>공공기관용 서비스 사용권 계약서 <span class="txt-gray">(전국 시도교육청)</span></li>
+                    <li>브랜디드 IP 콘텐츠 제작 및 활성화 제안서 <span class="txt-gray">(국립생태원 등)</span></li>
+                </ul>
             </div>
+            <div class="detail-section">
+                <h4>◼︎ 결과 및 성과</h4>
+                <ul>
+                    <li>총 10억 규모 사업 수주 <span class="txt-gray">(강원도교육청 등)</span></li>
+                    <li>전국 시도교육청 및 기업 대상 B2B/B2G 제휴 연간 6건 체결</li>
+                </ul>
+            </div>
+        </div>
         <div class="visual-image-area">
             <img src="main-image.jpg" alt="Project Visual">
         </div>
@@ -192,12 +215,24 @@
                 <div><a href="mailto:your-email@example.com">Mail</a>, <a href="https://github.com/nadjasiza">GitHub</a></div>
             </div>
         </div>
+
         <div class="footer-col footer-exp">
             <h3>EXPERIENCE</h3>
             <div class="exp-text">
-                <div class="exp-item"><span class="txt-gray">2025﹣2023</span><span>Korean Educational Broadcasting System</span><span>Chief Producer</span></div>
-                <div class="exp-item"><span class="txt-gray">2022﹣2018</span><span>Coop. SeongbukSinna</span><span>Project Manager</span></div>
-                <div class="exp-item"><span class="txt-gray">2018﹣2012</span><span>Bachelor of Architecture</span></div>
+                <div class="exp-item">
+                    <span class="txt-gray">2025﹣2023</span>
+                    <span>Korean Educational Broadcasting System</span>
+                    <span>Chief Producer</span>
+                </div>
+                <div class="exp-item">
+                    <span class="txt-gray">2022﹣2018</span>
+                    <span>Coop. SeongbukSinna</span>
+                    <span>Project Manager</span>
+                </div>
+                <div class="exp-item">
+                    <span class="txt-gray">2018﹣2012</span>
+                    <span>Bachelor of Architecture</span>
+                </div>
             </div>
         </div>
 
@@ -207,10 +242,11 @@
             <p class="desc-text">이후 팬데믹을 기점으로 빠르게 재편되는 기술의 사회적 흐름에 대응하고 지속적으로 브랜드의 성장을 견인하는 ICT 분야에서 PMO <span class="txt-gray">Project Management Office</span> 로 역할을 확장하여, 플랫폼의 런칭부터 고도화에 이르는 플랫폼 초기 2년의 전주기를 리드하였습니다. 이 과정에서 B2G·B2B 파트너십 기반의 BD <span class="txt-gray">Business Development</span> 역할을 동시에 수행하며 서비스를 확장하고, 브랜드 성장에 기여하는 ‘밸류 체인 고도화’ 중심의 기획 역량을 축적하였습니다.</p>
             <p class="desc-text">비즈니스의 결과가 다시 새로운 기회로 연결되는 선순환 구조를 관리하며 중·장기적으로 브랜드의 성장에 기여하는 프로젝트 매니저로 업무 경험을 만들어가고 싶습니다.</p>
         </div>
+
         <div class="footer-bottom">
             <div><a href="#top">Top ↑</a></div>
         </div>
     </footer>
-    
+
 </body>
 </html>
