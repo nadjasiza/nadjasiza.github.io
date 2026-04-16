@@ -9,19 +9,21 @@
         body { 
             font-family: "Helvetica", Arial, sans-serif; 
             font-size: 12px; line-height: 1.4; color: #1a1a1a; 
-            background-color: #f9f9f9; /* 요청하신 미색 배경 */
+            background-color: #f9f9f9; 
             margin: 0; padding: 0; 
             word-break: keep-all; scroll-behavior: smooth;
         }
 
-        /* 메인 인덱스 및 푸터 공통: 6분할 그리드 */
-        .main-index, footer { 
+        /* 공통 그리드 시스템: 6분할 */
+        .main-index, .main-visual-container, footer { 
             padding: 0 50px 10px 50px;
             display: grid; 
             grid-template-columns: repeat(6, 1fr); 
             gap: 20px; 
-            background-color: #f9f9f9;
         }
+
+        /* 인덱스 배경 및 푸터 배경 (미색) */
+        .main-index, footer { background-color: #f9f9f9; }
 
         /* 사이드바 스타일 */
         .sidebar { grid-column: 1; padding-top: 175px; }
@@ -43,63 +45,56 @@
         .item { margin-bottom: 60px; }
         .item-num { display: block; font-weight: bold; margin-bottom: 5px; }
         .item-name { display: block; margin-bottom: 3px; }
-        .item-year, .txt-gray { color: #888; } 
+        .item-year, .txt-gray { color: #888; }
         .item-year { display: block; font-size: 12px; margin-top: 10px; }
-        
         .item-link { text-decoration: none; color: inherit; }
         .item-link:hover { opacity: 0.5; }
 
-        /* 메인 비주얼 섹션 (흰색 배경 및 그리드) */
+        /* ------------------------------------------------ */
+        /* 메인 비주얼 섹션 (흰색 배경) */
         .main-visual-container {
             background-color: #ffffff; 
             padding: 120px 50px;
-            display: grid;
-            grid-template-columns: repeat(6, 1fr);
-            gap: 20px;
             align-items: start;
         }
+        /* 왼쪽 1번째 칸: 수정된 타이틀 반영 */
         .visual-title { grid-column: 1; }
-        .visual-title h2 { font-size: 13px; font-weight: bold; line-height: 1.4; margin: 0; }
+        .visual-title h3 { font-size: 13px; font-weight: bold; line-height: 1.5; margin: 0; }
+        
+        /* 왼쪽 2~3번째 칸: 상세 내용 */
         .visual-detail { grid-column: 2 / span 2; padding-right: 20px; }
         .detail-section { margin-bottom: 30px; }
         .detail-section h4 { font-size: 12px; font-weight: bold; margin-bottom: 10px; }
         .detail-section ul { list-style: none; padding: 0; margin: 0; }
         .detail-section li { margin-bottom: 8px; position: relative; padding-left: 12px; }
         .detail-section li::before { content: "•"; position: absolute; left: 0; color: #888; }
+
+        /* 오른쪽 3칸 (4~6번): 이미지 영역 */
         .visual-image-area { grid-column: 4 / span 3; }
         .visual-image-area img { width: 100%; height: auto; display: block; }
+        /* ------------------------------------------------ */
 
         /* 푸터 스타일 */
         footer { 
             padding: 100px 50px; 
             margin-top: 150px;
             align-items: start;
-            /* 구분선 제거 요청 반영 */
             border-top: none; 
         }
-
-        /* [수정 포인트] 푸터 좌측 이름 영역: padding-top 15px */
-        .footer-sidebar { 
-            grid-column: 1; 
-            padding-top: 15px; 
-        }
-        
-        .footer-exp { grid-column: 2 / span 2; } 
-        .footer-desc-area { grid-column: 4 / span 3; } 
-
+        .footer-sidebar { grid-column: 1; padding-top: 15px; }
+        .footer-exp { grid-column: 2 / span 2; }
+        .footer-desc-area { grid-column: 4 / span 3; }
         .footer-col h3 { font-size: 13px; font-weight: bold; margin-bottom: 25px; text-transform: uppercase; }
         .exp-text { line-height: 1.6; color: #1a1a1a; margin: 0; }
         .exp-item { margin-bottom: 15px; display: block; }
         .exp-item span { display: block; }
-        
         .desc-text { line-height: 1.6; color: #1a1a1a; margin-bottom: 15px; }
 
         #footer-anchor { scroll-margin-top: 50px; }
-
         .footer-bottom { 
             grid-column: 1 / -1; 
             display: flex; 
-            justify-content: space-between; 
+            justify-content: flex-end; 
             padding-top: 80px; 
             font-size: 12px;
         }
@@ -107,8 +102,8 @@
 
         @media (max-width: 1400px) {
             .main-index, .main-visual-container, footer { grid-template-columns: 1fr 1fr; }
-            .sidebar, .footer-sidebar { grid-column: 1; padding-top: 20px; }
-            .column-context, .footer-exp { grid-column: 2; }
+            .sidebar, .footer-sidebar, .visual-title { grid-column: 1; padding-top: 20px; }
+            .column-context, .footer-exp, .visual-detail { grid-column: 2; }
             .visual-image-area { grid-column: 1 / span 2; margin-top: 40px; }
         }
     </style>
@@ -167,7 +162,10 @@
 
     <div class="main-visual-container">
         <div class="visual-title">
-            <h2>B2G·B2B 전략 수주 및 RFP 기반 비즈니스 모델 설계<span class="txt-gray">Strategic B2G·B2B Acquisition & RFP Response</span></h2>
+            <h3>
+                B2G·B2B 전략 수주 및 RFP 기반 비즈니스 모델 설계<br>
+                <span class="txt-gray">Strategic B2G·B2B Acquisition & RFP Response</span>
+            </h3>
         </div>
         <div class="visual-detail">
             <div class="detail-section">
@@ -203,7 +201,7 @@
             </div>
         </div>
         <div class="visual-image-area">
-            <img src="main-image.jpg" alt="Project Visual">
+            <img src="main-image.jpg" alt="Project Visual Illustration">
         </div>
     </div>
 
