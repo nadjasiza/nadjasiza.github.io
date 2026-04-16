@@ -13,7 +13,7 @@
             word-break: keep-all; scroll-behavior: smooth;
         }
 
-        /* 1. 공통 그리드 시스템 (6분할) */
+        /* 메인 인덱스 및 푸터 공통: 6분할 그리드 */
         .main-index, footer { 
             padding: 0 50px 10px 50px;
             display: grid; 
@@ -21,7 +21,7 @@
             gap: 20px; 
         }
 
-        /* 사이드바 및 공통 링크 스타일 */
+        /* 사이드바 스타일 */
         .sidebar { grid-column: 1; padding-top: 175px; }
         .sidebar-name, .footer-sidebar .sidebar-name { font-weight: bold; display: block; margin-bottom: 13px; text-transform: uppercase; }
         .sidebar-links div { margin-bottom: 3px; }
@@ -41,42 +41,33 @@
         .item { margin-bottom: 60px; }
         .item-num { display: block; font-weight: bold; margin-bottom: 5px; }
         .item-name { display: block; margin-bottom: 3px; }
-        .item-year, .txt-gray { color: #888; }
+        .item-year, .txt-gray { color: #888; } /* 회색 스타일 정의 */
         .item-year { display: block; font-size: 12px; margin-top: 10px; }
+        
         .item-link { text-decoration: none; color: inherit; }
         .item-link:hover { opacity: 0.5; }
 
-        /* 2. [추가] 메인 이미지 섹션 (인덱스와 푸터 사이) */
-        .main-visual {
-            padding: 100px 50px; /* 위아래 여백 */
-            width: 100%;
-            display: flex;
-            justify-content: center;
-        }
-        .main-visual img {
-            width: 100%;
-            max-width: 100%; /* 이미지 크기를 화면에 맞춤 */
-            height: auto;
-            display: block;
-        }
-
-        /* 3. 푸터 스타일 */
+        /* 푸터 스타일 */
         footer { 
             border-top: 1px solid #000; 
             padding: 60px 50px; 
-            margin-top: 50px;
+            margin-top: 150px;
             align-items: start;
         }
-        .footer-sidebar { grid-column: 1; padding-top: 13px; }
-        .footer-exp { grid-column: 2 / span 2; }
-        .footer-desc-area { grid-column: 4 / span 3; }
+
+        .footer-sidebar { grid-column: 1; padding-top: 15px; } /* EXPERIENCE 타이틀과 수평 정렬 */
+        .footer-exp { grid-column: 2 / span 2; } /* 2~3번째 칸 차지 */
+        .footer-desc-area { grid-column: 4 / span 3; } /* 4~6번째 칸 차지 */
+
         .footer-col h3 { font-size: 13px; font-weight: bold; margin-bottom: 25px; text-transform: uppercase; }
         .exp-text { line-height: 1.6; color: #1a1a1a; margin: 0; }
         .exp-item { margin-bottom: 15px; display: block; }
         .exp-item span { display: block; }
+        
         .desc-text { line-height: 1.6; color: #1a1a1a; margin-bottom: 15px; }
 
         #footer-anchor { scroll-margin-top: 50px; }
+
         .footer-bottom { 
             grid-column: 1 / -1; 
             display: flex; 
@@ -103,6 +94,7 @@
                 <div><a href="mailto:your-email@example.com">Mail</a>, <a href="https://github.com/nadjasiza">GitHub</a></div>
             </div>
         </div>
+
         <div class="column column-context">
             <div class="column-title">I<br>Project<br>Context</div>
             <div class="item">
@@ -118,22 +110,30 @@
                 <span class="item-year">2021-2018</span>
             </div>
         </div>
+
         <div class="column column-archive-1">
             <div class="column-title">II<br>Project<br>Archive</div>
             <div class="item"><span class="item-num">3</span><span class="item-name">B2G·B2B 전략 수주<br>RFP 기반 비즈니스<br>모델 설계</span><span class="item-year">2025-2023</span></div>
+            <div class="item"><span class="item-num">4</span><span class="item-name">사용자 데이터 기반<br>서비스 고도화<br>& 인앱 콘텐츠 기획</span><span class="item-year">2025-2023</span></div>
+            <div class="item"><span class="item-num">5</span><span class="item-name">플랫폼 사업<br>전주기 운영</span><span class="item-year">2025-2024</span></div>
+            <div class="item"><span class="item-num">6</span><span class="item-name">브랜드 아이덴티티<br>구축 & 통합 전략</span><span class="item-year">2024-2023</span></div>
+            <div class="item"><span class="item-num">7</span><span class="item-name">O2O 통합 마케팅<br>& 오프라인 경험 디렉팅</span><span class="item-year">2024-2023</span></div>
+            <div class="item"><span class="item-num">8</span><span class="item-name">전략적 브랜드 커뮤니케이션<br>& 채널 관리</span><span class="item-year">2024-2023</span></div>
         </div>
+
         <div class="column column-archive-2">
             <div class="column-title" style="visibility: hidden;">II<br>Cont.</div>
             <div class="item"><span class="item-num">9</span><span class="item-name">도시기획 연구<br>& 공유공간 조성</span><span class="item-year">2021-2018</span></div>
+            <div class="item"><span class="item-num">10</span><span class="item-name">로컬 임팩트 사업<br>기획 & 운영</span><span class="item-year">2021-2019</span></div>
         </div>
+
         <div class="column column-article">
             <div class="column-title">III<br>Article</div>
             <div class="item"><span class="item-num">11</span><span class="item-name">도시식물탐사</span><span class="item-year">2026-2023</span></div>
+            <div class="item"><span class="item-num">12</span><span class="item-name">지구의 금요극장</span><span class="item-year">2026</span></div>
+            <div class="item"><span class="item-num">13</span><span class="item-name">Lost in Frenchlation</span><span class="item-year">2025</span></div>
+            <div class="item"><span class="item-num">14</span><span class="item-name">서신교환</span><span class="item-year">2023</span></div>
         </div>
-    </div>
-
-    <div class="main-visual">
-        <img src="main-image.jpg" alt="Eunbyeol Song Portfolio Visual">
     </div>
 
     <footer id="footer-anchor">
@@ -173,8 +173,6 @@
         </div>
 
         <div class="footer-bottom">
-            <div>Eunbyeol Song</div>
-            <div>2012 - 2026</div>
             <div><a href="#top">Top ↑</a></div>
         </div>
     </footer>
