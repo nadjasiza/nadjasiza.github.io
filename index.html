@@ -13,11 +13,11 @@
             word-break: keep-all; scroll-behavior: smooth;
         }
 
-        /* 메인 인덱스 그리드 */
+        /* 1. 전체 콘텐츠를 왼쪽으로 조금 더 이동 (첫 열 너비를 200px -> 170px로 축소) */
         .main-index { 
             padding: 0 50px 120px 50px;
             display: grid; 
-            grid-template-columns: 200px 220px 220px 220px 220px; 
+            grid-template-columns: 170px 220px 220px 220px 220px; 
             gap: 20px; 
         }
 
@@ -33,44 +33,31 @@
 
         .item { margin-bottom: 40px; }
         .item-num { display: block; font-weight: bold; margin-bottom: 5px; }
+        .item-name { display: block; margin-bottom: 3px; font-weight: normal; }
+        .item-year { display: block; color: #888; font-size: 12px; margin-top: 2px; }
+        
         .item-link { text-decoration: none; color: inherit; }
         .item-link:hover { opacity: 0.5; }
 
-        /* 푸터 레이아웃 */
+        /* 푸터 설정 (인덱스 첫 열과 EXPERIENCE 정렬 유지) */
         footer { 
             border-top: 1px solid #000; 
             padding: 60px 50px; 
             margin-top: 150px;
             display: grid;
-            grid-template-columns: 200px 220px 300px 1fr; 
+            grid-template-columns: 190px 220px 300px 1fr; 
             gap: 20px;
         }
         #footer-anchor { scroll-margin-top: 50px; }
-
         .footer-col h3 { font-size: 13px; font-weight: bold; margin-bottom: 25px; text-transform: uppercase; }
-        
-        /* 1. EXPERIENCE 항목 간격 및 줄바꿈 설정 */
-        .exp-text { 
-            line-height: 1.2; /* 줄 간격을 더 좁게 설정 */
-            color: #1a1a1a; 
-            margin: 0;
-        }
-        .exp-text span { display: block; margin-bottom: 2px; } /* 항목 사이 미세한 간격 */
-
+        .exp-text { line-height: 1.2; color: #1a1a1a; margin: 0; }
+        .exp-text span { display: block; margin-bottom: 2px; }
         .footer-sidebar { grid-column: 1; }
         .footer-exp { grid-column: 2; }
         .footer-desc-area { grid-column: 3 / span 2; }
-        
         .project-manager-title { font-weight: bold; margin-bottom: 20px; display: block; }
         .desc-text { line-height: 1.6; color: #1a1a1a; margin-bottom: 15px; }
-
-        .footer-bottom { 
-            grid-column: 1 / -1; 
-            display: flex; 
-            justify-content: space-between; 
-            padding-top: 60px; 
-            font-size: 12px;
-        }
+        .footer-bottom { grid-column: 1 / -1; display: flex; justify-content: space-between; padding-top: 60px; font-size: 12px; }
         .footer-bottom a { text-decoration: none; color: inherit; }
 
         @media (max-width: 1300px) {
@@ -95,36 +82,88 @@
             <div class="column-title">I<br>Project<br>Context</div>
             <div class="item">
                 <span class="item-num">1</span>
-                <a href="project-01.html" class="item-link">EBS 신규 플랫폼 런칭 및 고도화</a>
+                <a href="project-01.html" class="item-link">
+                    <span class="item-name">EBS 신규 플랫폼 런칭 및 고도화</span>
+                    <span class="item-year">2025-2023</span>
+                </a>
             </div>
             <div class="item">
                 <span class="item-num">2</span>
-                <span>공간 조성 및 활성화 추진</span>
+                <span class="item-name">공간 조성 및 활성화 추진</span>
+                <span class="item-year">2021-2018</span>
             </div>
         </div>
 
         <div class="column">
             <div class="column-title">II<br>Project<br>Archive</div>
-            <div class="item"><span class="item-num">3</span>B2G·B2B 전략 수주</div>
-            <div class="item"><span class="item-num">4</span>사용자 데이터 기반 서비스 고도화</div>
-            <div class="item"><span class="item-num">5</span>사업 전주기 운영</div>
-            <div class="item"><span class="item-num">6</span>브랜드 아이덴티티 구축</div>
-            <div class="item"><span class="item-num">7</span>O2O 통합 마케팅</div>
-            <div class="item"><span class="item-num">8</span>전략적 브랜드 커뮤니케이션</div>
+            <div class="item">
+                <span class="item-num">3</span>
+                <span class="item-name">B2G·B2B 전략 수주<br>RFP 기반 비즈니스<br>모델 설계</span>
+                <span class="item-year">2025-2023</span>
+            </div>
+            <div class="item">
+                <span class="item-num">4</span>
+                <span class="item-name">사용자 데이터 기반<br>서비스 고도화<br>& 인앱 콘텐츠 기획</span>
+                <span class="item-year">2025-2023</span>
+            </div>
+            <div class="item">
+                <span class="item-num">5</span>
+                <span class="item-name">사업 전주기 운영</span>
+                <span class="item-year">2025-2024</span>
+            </div>
+            <div class="item">
+                <span class="item-num">6</span>
+                <span class="item-name">브랜드 아이덴티티<br>구축 및 통합 전략</span>
+                <span class="item-year">2024-2023</span>
+            </div>
+            <div class="item">
+                <span class="item-num">7</span>
+                <span class="item-name">O2O 통합 마케팅<br>& 오프라인 경험 디렉팅</span>
+                <span class="item-year">2024-2023</span>
+            </div>
+            <div class="item">
+                <span class="item-num">8</span>
+                <span class="item-name">전략적 브랜드<br>커뮤니케이션<br>& 채널 관리</span>
+                <span class="item-year">2024-2023</span>
+            </div>
         </div>
 
         <div class="column">
             <div class="column-title" style="visibility: hidden;">II<br>Cont.</div>
-            <div class="item"><span class="item-num">9</span>도시기획 연구 & 공유공간 조성</div>
-            <div class="item"><span class="item-num">10</span>로컬 임팩트 사업 기획 및 운영</div>
+            <div class="item">
+                <span class="item-num">9</span>
+                <span class="item-name">도시기획 연구<br>& 공유공간 조성</span>
+                <span class="item-year">2021-2018</span>
+            </div>
+            <div class="item">
+                <span class="item-num">10</span>
+                <span class="item-name">로컬 임팩트 사업<br>기획 및 운영</span>
+                <span class="item-year">2021-2019</span>
+            </div>
         </div>
 
         <div class="column">
             <div class="column-title">III<br>Article</div>
-            <div class="item"><span class="item-num">11</span>도시식물탐사</div>
-            <div class="item"><span class="item-num">12</span>지구의 금요극장</div>
-            <div class="item"><span class="item-num">13</span>Lost in Frenchlation</div>
-            <div class="item"><span class="item-num">14</span>서신교환</div>
+            <div class="item">
+                <span class="item-num">11</span>
+                <span class="item-name">도시식물탐사</span>
+                <span class="item-year">2026-2023</span>
+            </div>
+            <div class="item">
+                <span class="item-num">12</span>
+                <span class="item-name">지구의 금요극장</span>
+                <span class="item-year">2026</span>
+            </div>
+            <div class="item">
+                <span class="item-num">13</span>
+                <span class="item-name">Lost in Frenchlation</span>
+                <span class="item-year">2025</span>
+            </div>
+            <div class="item">
+                <span class="item-num">14</span>
+                <span class="item-name">서신교환</span>
+                <span class="item-year">2023</span>
+            </div>
         </div>
     </div>
 
@@ -136,7 +175,6 @@
                 <div><a href="https://github.com/nadjasiza">GitHub</a></div>
             </div>
         </div>
-
         <div class="footer-col footer-exp">
             <h3>EXPERIENCE</h3>
             <p class="exp-text">
@@ -145,14 +183,10 @@
                 <span>Bachelor of Architecture</span>
             </p>
         </div>
-
         <div class="footer-col footer-desc-area">
             <span class="project-manager-title">Business Development & Project Manager</span>
-            <p class="desc-text">ICT·로컬 비즈니스 분야에서 사업 개발과 브랜드 성장을 리드해 온 6년 차 프로젝트 매니저입니다. 건축을 전공하며 훈련했던 구조적이고 통합적으로 보려는 태도는 자연스럽게 도시에 대한 관심으로 확장되었고, 로컬 비즈니스 분야에서 다수의 사업을 기획하고 실행하며 프로젝트 매니지먼트 Project Management 경험을 만들었습니다.</p>
-            <p class="desc-text">이후 팬데믹을 기점으로 빠르게 재편되는 기술의 사회적 흐름에 대응하고 지속적으로 브랜드의 성장을 견인하는 ICT 분야에서 PMO Project Management Office 로 역할을 확장하여, 플랫폼의 런칭부터 고도화에 이르는 플랫폼 초기 2년의 전주기를 리드하였습니다.</p>
-            <p class="desc-text">비즈니스의 결과가 다시 새로운 기회로 연결되는 선순환 구조를 관리하며 중·장기적으로 브랜드의 성장에 기여하는 PM으로 업무 경험을 만들어가고 싶습니다.</p>
-        </div>
-
+            <p class="desc-text">ICT·로컬 비즈니스 분야에서 사업 개발과 브랜드 성장을 리드해 온 6년 차 프로젝트 매니저입니다...</p>
+            </div>
         <div class="footer-bottom">
             <div>송은별</div>
             <div>2012-2026</div>
