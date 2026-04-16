@@ -3,40 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eunbyeol Song | Portfolio</title>
+    <title>Eunbyeol Song | Index</title>
     <style>
-        body { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; line-height: 1.6; max-width: 1000px; margin: 80px auto; padding: 0 40px; color: #1a1a1a; word-break: keep-all; background-color: #f9f9f9; }
-        
-        /* 상단 네비게이션 스타일 */
-        .sidebar { position: fixed; left: 40px; top: 80px; width: 150px; font-size: 13px; }
-        .sidebar div { margin-bottom: 5px; }
+        /* 기본 폰트 및 배경 설정 */
+        body { 
+            font-family: "Helvetica", Arial, sans-serif; 
+            font-size: 13px; 
+            line-height: 1.4; 
+            color: #1a1a1a; 
+            background-color: #fcfcfc; 
+            margin: 0; 
+            padding: 60px 50px; 
+            letter-spacing: -0.01em;
+        }
 
-        /* 메인 콘텐츠 영역 */
-        .container { margin-left: 200px; }
-        
-        header { margin-bottom: 100px; }
-        h1 { font-size: 22px; font-weight: 700; margin-bottom: 30px; letter-spacing: -0.5px; }
-        .intro-text { font-size: 15px; color: #333; max-width: 650px; margin-bottom: 20px; text-align: justify; }
+        /* 좌측 사이드 정보 (About/Mail) */
+        .sidebar { 
+            position: fixed; 
+            left: 50px; 
+            top: 60px; 
+            width: 100px; 
+        }
+        .sidebar div { margin-bottom: 2px; }
+        .sidebar a { text-decoration: none; color: inherit; border-bottom: 1px solid #ccc; }
 
-        /* 3단 그리드 레이아웃 */
-        .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 50px; margin-top: 80px; }
-        
-        .column-header { font-size: 13px; border-bottom: 1px solid #000; padding-bottom: 10px; margin-bottom: 30px; }
-        .column-header span { display: block; font-weight: bold; margin-bottom: 5px; }
+        /* 메인 그리드 설정: 구분선 없이 간격으로만 조정 */
+        .container { 
+            display: grid; 
+            grid-template-columns: 120px 180px 180px 180px; 
+            gap: 40px; 
+            margin-left: 200px; /* 사이드바 공간 확보 */
+        }
 
-        /* 리스트 아이템 스타일 */
-        .item { margin-bottom: 40px; font-size: 13px; position: relative; }
-        .item-number { font-weight: bold; margin-bottom: 5px; display: block; }
-        .item-title { font-weight: bold; display: block; margin-bottom: 3px; }
-        .item-desc { color: #666; display: block; line-height: 1.5; }
-        
-        a { color: inherit; text-decoration: none; border-bottom: 1px solid transparent; transition: 0.2s; }
-        a:hover { border-bottom: 1px solid #000; }
+        /* 타이틀 스타일: 볼드체, 줄바꿈 적용 */
+        .column-title { 
+            font-weight: bold; 
+            margin-bottom: 50px; 
+            text-transform: uppercase;
+            line-height: 1.2;
+        }
 
-        @media (max-width: 768px) {
-            .sidebar { position: static; width: 100%; margin-bottom: 50px; text-align: left; }
-            .container { margin-left: 0; }
-            .grid { grid-template-columns: 1fr; }
+        /* 아이템 스타일: 숫자와 제목 배치 */
+        .item { 
+            margin-bottom: 30px; 
+        }
+        .item-num { 
+            display: block; 
+            font-weight: bold; 
+            margin-bottom: 3px; 
+        }
+        .item-name { 
+            display: block; 
+            margin-bottom: 1px;
+        }
+        .item-link {
+            text-decoration: none;
+            color: inherit;
+        }
+        .item-link:hover {
+            opacity: 0.6;
+        }
+
+        /* 모바일 대응 */
+        @media (max-width: 800px) {
+            .sidebar { position: static; margin-bottom: 60px; }
+            .container { margin-left: 0; grid-template-columns: 1fr 1fr; }
         }
     </style>
 </head>
@@ -44,74 +75,64 @@
 
     <div class="sidebar">
         <div><strong>Eunbyeol Song</strong></div>
-        <div><a href="mailto:your-email@example.com">Mail</a>, <a href="https://github.com/nadjasiza">IG</a></div>
+        <div><a href="mailto:your-email@example.com">Mail</a></div>
+        <div><a href="https://github.com/nadjasiza">GitHub</a></div>
     </div>
 
     <div class="container">
-        <header>
-            <h1>송은별 Eunbyeol Song</h1>
-            <div class="intro-text">
-                ICT·로컬 비즈니스 분야에서 사업 개발과 브랜드 성장을 리드해 온 6년 차 프로젝트 매니저입니다. 건축학적 태도를 바탕으로 도시에 대한 관심을 확장하며 브랜드의 성장을 견인하는 ‘밸류 체인 고도화’ 중심의 기획 역량을 축적해 왔습니다.
+        
+        <div class="column">
+            <div class="column-title">I<br>Project<br>Context</div>
+            
+            <div class="item">
+                <span class="item-num">1</span>
+                <span class="item-name">지역 자산 기록화 사업</span>
             </div>
-            <div class="intro-text">
-                비즈니스의 결과가 다시 새로운 기회로 연결되는 선순환 구조를 관리하며 중·장기적으로 브랜드의 성장에 기여하는 PM으로 업무 경험을 만들어가고 싶습니다.
-            </div>
-        </header>
-
-        <div class="grid">
-            <div class="column">
-                <div class="column-header">
-                    <span>I</span>
-                    Project Context
-                </div>
-                <div class="item">
-                    <span class="item-number">1</span>
-                    <span class="item-title">지역 자산 기록화 사업</span>
-                    <span class="item-desc">도시 재개발 구역 내 커뮤니티 공간 아카이빙 및 로컬 콘텐츠 기획</span>
-                </div>
-                <div class="item">
-                    <span class="item-number">2</span>
-                    <span class="item-title">ICT 플랫폼 런칭 및 PMO</span>
-                    <span class="item-desc">플랫폼 초기 전주기 리드 및 밸류 체인 고도화 전략 수립</span>
-                </div>
-            </div>
-
-            <div class="column">
-                <div class="column-header">
-                    <span>II</span>
-                    Project Archive
-                </div>
-                <div class="item">
-                    <span class="item-number">3</span>
-                    <span class="item-title">마을기업 협동조합 운영</span>
-                    <span class="item-desc">예비사회적기업 기반의 로컬 비즈니스 모델 구축</span>
-                </div>
-                <div class="item">
-                    <span class="item-number">4</span>
-                    <span class="item-title">EBS ICT 교육 모델 개발</span>
-                    <span class="item-desc">글로벌 교육 테크놀로지 파트너십 및 사업 확장</span>
-                </div>
-            </div>
-
-            <div class="column">
-                <div class="column-header">
-                    <span>III</span>
-                    Articles
-                </div>
-                <div class="item">
-                    <span class="item-number">5</span>
-                    <span class="item-title"><a href="#">도시의 이끼 관찰기</a></span>
-                </div>
-                <div class="item">
-                    <span class="item-number">6</span>
-                    <span class="item-title"><a href="#">건축인류학적 시선</a></span>
-                </div>
-                <div class="item">
-                    <span class="item-number">7</span>
-                    <span class="item-title"><a href="#">비즈니스 선순환 구조</a></span>
-                </div>
+            
+            <div class="item">
+                <span class="item-num">2</span>
+                <span class="item-name">ICT 플랫폼 런칭 및 PMO</span>
             </div>
         </div>
+
+        <div class="column">
+            <div class="column-title">II<br>Project<br>Archive</div>
+            
+            <div class="item">
+                <span class="item-num">3</span>
+                <span class="item-name">마을기업 협동조합 운영</span>
+            </div>
+            
+            <div class="item">
+                <span class="item-num">4</span>
+                <span class="item-name">EBS ICT 교육 모델 개발</span>
+            </div>
+
+            <div class="item">
+                <span class="item-num">5</span>
+                <span class="item-name">로컬 영화관 구축 프로젝트</span>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="column-title">III<br>Article</div>
+            
+            <div class="item">
+                <span class="item-num">6</span>
+                <a href="#" class="item-link"><span class="item-name">도시의 이끼 관찰기</span></a>
+            </div>
+            
+            <div class="item">
+                <span class="item-num">7</span>
+                <a href="#" class="item-link"><span class="item-name">건축인류학적 시선</span></a>
+            </div>
+            
+            <div class="item">
+                <span class="item-num">8</span>
+                <a href="#" class="item-link"><span class="item-name">비즈니스 선순환 구조</span></a>
+            </div>
+        </div>
+
     </div>
 
 </body>
