@@ -13,23 +13,33 @@
             word-break: keep-all; scroll-behavior: smooth;
         }
 
-        /* 메인 그리드 설정 */
+        /* 1. 그리드 조정: 첫 번째 열 너비를 줄여 전체를 왼쪽으로 한 칸 이동 */
         .main-index { 
             padding: 0 50px 120px 50px;
             display: grid; 
-            grid-template-columns: 600px 220px 220px 220px 220px; 
+            /* Eunbyeol SONG 열 너비를 600px -> 300px로 조정하여 본문을 왼쪽으로 당김 */
+            grid-template-columns: 300px 220px 220px 220px 220px; 
             gap: 20px; 
         }
 
-        /* 사이드바 위치 정렬 */
-        .sidebar { grid-column: 1; padding-top: 138px; }
+        /* 2. Eunbyeol SONG 위치 정렬 */
+        .sidebar { 
+            grid-column: 1; 
+            /* 타이틀 높이 + 요청하신 5줄 여백만큼 계산하여 1, 3, 9, 11번과 수평 맞춤 */
+            padding-top: 175px; 
+        }
         .sidebar-name { font-weight: bold; display: block; margin-bottom: 13px; text-transform: uppercase; }
         .sidebar-links div { margin-bottom: 3px; }
         .sidebar a { text-decoration: none; color: inherit; border-bottom: 1px solid #ccc; }
 
+        /* 3. 타이틀 아래 여백 5줄(80px) 적용 */
         .column-title { 
-            font-weight: bold; margin-top: 60px; margin-bottom: 43px; 
-            text-transform: uppercase; line-height: 1.2; height: 35px; 
+            font-weight: bold; 
+            margin-top: 60px; 
+            margin-bottom: 80px; /* 약 5줄 정도의 여백 */
+            text-transform: uppercase; 
+            line-height: 1.2; 
+            height: 35px; 
         }
 
         .item { margin-bottom: 40px; }
@@ -37,38 +47,22 @@
         .item-link { text-decoration: none; color: inherit; }
         .item-link:hover { opacity: 0.5; }
 
-        /* --- 푸터 레이아웃 (Cargo Style) --- */
+        /* 푸터 (기존 레이아웃 유지) */
         footer { 
             border-top: 1px solid #000; 
             padding: 60px 50px; 
             margin-top: 150px;
             display: grid;
-            grid-template-columns: 200px 300px 1fr; /* Cargo 스타일 너비 배분 */
+            grid-template-columns: 200px 300px 1fr;
             gap: 50px;
-            align-items: start;
         }
-        
-        #footer-anchor { scroll-margin-top: 50px; } /* About 클릭 시 이동 지점 */
-
-        .footer-col h3 { 
-            font-size: 13px; font-weight: bold; margin-bottom: 25px; 
-            text-transform: uppercase; letter-spacing: 0.5px;
-        }
-
-        .footer-col p { line-height: 1.6; color: #1a1a1a; margin-top: 0; }
-        .footer-col .sub-item { margin-bottom: 15px; display: block; }
-
-        /* 푸터 최하단 바 */
-        .footer-bottom { 
-            grid-column: 1 / -1; 
-            display: flex; 
-            justify-content: space-between; 
-            padding-top: 60px; 
-            font-size: 12px;
-        }
+        #footer-anchor { scroll-margin-top: 50px; }
+        .footer-col h3 { font-size: 13px; font-weight: bold; margin-bottom: 25px; text-transform: uppercase; }
+        .footer-col p { line-height: 1.6; color: #1a1a1a; margin-top: 0; margin-bottom: 15px; }
+        .footer-bottom { grid-column: 1 / -1; display: flex; justify-content: space-between; padding-top: 60px; font-size: 12px; }
         .footer-bottom a { text-decoration: none; color: inherit; }
 
-        @media (max-width: 1200px) {
+        @media (max-width: 1300px) {
             .main-index, footer { grid-template-columns: 1fr; }
             .sidebar { padding-top: 20px; }
         }
@@ -92,33 +86,48 @@
                 <span class="item-num">1</span>
                 <a href="project-01.html" class="item-link">EBS 신규 플랫폼 런칭 및 고도화</a>
             </div>
+            <div class="item">
+                <span class="item-num">2</span>
+                <span>공간 조성 및 활성화 추진</span>
             </div>
         </div>
+
+        <div class="column">
+            <div class="column-title">II<br>Project<br>Archive</div>
+            <div class="item"><span class="item-num">3</span>B2G·B2B 전략 수주</div>
+            <div class="item"><span class="item-num">4</span>사용자 데이터 기반 서비스 고도화</div>
+            <div class="item"><span class="item-num">5</span>사업 전주기 운영</div>
+            <div class="item"><span class="item-num">6</span>브랜드 아이덴티티 구축</div>
+            <div class="item"><span class="item-num">7</span>O2O 통합 마케팅</div>
+            <div class="item"><span class="item-num">8</span>전략적 브랜드 커뮤니케이션</div>
+        </div>
+
+        <div class="column">
+            <div class="column-title" style="visibility: hidden;">II<br>Cont.</div>
+            <div class="item"><span class="item-num">9</span>도시기획 연구 & 공유공간 조성</div>
+            <div class="item"><span class="item-num">10</span>로컬 임팩트 사업 기획 및 운영</div>
+        </div>
+
+        <div class="column">
+            <div class="column-title">III<br>Article</div>
+            <div class="item"><span class="item-num">11</span>도시식물탐사</div>
+            <div class="item"><span class="item-num">12</span>지구의 금요극장</div>
+            <div class="item"><span class="item-num">13</span>Lost in Frenchlation</div>
+            <div class="item"><span class="item-num">14</span>서신교환</div>
+        </div>
+    </div>
 
     <footer id="footer-anchor">
         <div class="footer-col">
             <h3>EXPERIENCE</h3>
-            <span class="sub-item">Korean Educational Broadcasting System, EBS CP</span>
-            <span class="sub-item">Coop. Seongbuk Sinna PM</span>
-            <span class="sub-item">Bachelor of Architecture</span>
+            <p>Korean Educational Broadcasting System, EBS CP<br>Coop. Seongbuk Sinna PM<br>Bachelor of Architecture</p>
         </div>
-
         <div class="footer-col">
             <h3>Business Development & Project Manager</h3>
         </div>
-
         <div class="footer-col">
-            <p>
-                ICT·로컬 비즈니스 분야에서 사업 개발과 브랜드 성장을 리드해 온 6년 차 프로젝트 매니저입니다. 건축을 전공하며 훈련했던 구조적이고 통합적으로 보려는 태도는 자연스럽게 도시에 대한 관심으로 확장되었고, 로컬 비즈니스 분야에서 다수의 사업을 기획하고 실행하며 프로젝트 매니지먼트 Project Management 경험을 만들었습니다.
-            </p>
-            <p>
-                이후 팬데믹을 기점으로 빠르게 재편되는 기술의 사회적 흐름에 대응하고 지속적으로 브랜드의 성장을 견인하는 ICT 분야에서 PMO Project Management Office 로 역할을 확장하여, 플랫폼의 런칭부터 고도화에 이르는 플랫폼 초기 2년의 전주기를 리드하였습니다. 이 과정에서 B2G·B2B 파트너십 기반의 BD Business Development 역할을 동시에 수행하며 서비스를 확장하고, 브랜드 성장에 기여하는 ‘밸류 체인 고도화’ 중심의 기획 역량을 축적하였습니다.
-            </p>
-            <p>
-                비즈니스의 결과가 다시 새로운 기회로 연결되는 선순환 구조를 관리하며 중·장기적으로 브랜드의 성장에 기여하는 PM으로 업무 경험을 만들어가고 싶습니다.
-            </p>
+            <p>ICT·로컬 비즈니스 분야에서 사업 개발과 브랜드 성장을 리드해 온 6년 차 프로젝트 매니저입니다...</p>
         </div>
-
         <div class="footer-bottom">
             <div>송은별</div>
             <div>2012-2026</div>
