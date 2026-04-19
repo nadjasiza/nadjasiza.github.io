@@ -34,9 +34,10 @@
         .column-archive-2 { grid-column: 5; }
         .column-article { grid-column: 6; }
 
+        /* 수정됨: height를 min-height로 변경하여 텍스트 겹침 등 오버플로우 방지 */
         .column-title { 
             font-weight: bold; margin-top: 30px; margin-bottom: 100px; 
-            text-transform: uppercase; line-height: 1.2; height: 35px; 
+            text-transform: uppercase; line-height: 1.2; min-height: 50px; 
         }
 
         .item { margin-bottom: 60px; }
@@ -92,11 +93,39 @@
         }
         .footer-bottom a { border-bottom: none; }
 
+        /* 💡 추가 및 수정됨: 1400px 이하 태블릿 및 중간 크기 랩탑 (2단 그리드) */
         @media (max-width: 1400px) {
             .main-index, .main-visual-container, footer { grid-template-columns: 1fr 1fr; }
             .sidebar, .footer-sidebar, .visual-title { grid-column: 1; padding-top: 20px; }
             .column-context, .footer-exp, .visual-detail { grid-column: 2; }
+            
+            /* 데스크톱(6열)에서 지정한 위치를 auto로 초기화하여 그리드 깨짐 방지 */
+            .column-archive-1, .column-archive-2, .column-article {
+                grid-column: auto;
+            }
             .visual-image-area { grid-column: 1 / span 2; margin-top: 40px; }
+            .footer-desc-area { grid-column: 1 / span 2; margin-top: 40px; }
+        }
+
+        /* 💡 추가됨: 스마트폰 및 소형 모바일 기기 지원 (1단 그리드) */
+        @media (max-width: 768px) {
+            .main-index, .main-visual-container, footer { 
+                grid-template-columns: 1fr; 
+                /* 상단 여백은 유지하면서 좌우 여백을 스마트폰에 맞게 소폭 축소 */
+                padding-left: 20px; 
+                padding-right: 20px;
+            }
+            
+            /* 모든 요소가 1열(모바일 전체 너비)을 차지하도록 조정 */
+            .sidebar, .footer-sidebar, .visual-title,
+            .column-context, .footer-exp, .visual-detail,
+            .column-archive-1, .column-archive-2, .column-article,
+            .visual-image-area, .footer-desc-area {
+                grid-column: 1; 
+            }
+            
+            .visual-detail { padding-right: 0; }
+            .visual-image-area, .footer-desc-area { margin-top: 20px; }
         }
     </style>
 </head>
@@ -107,6 +136,7 @@
             <span class="sidebar-name">Eunbyeol SONG</span>
             <div class="sidebar-links">
                 <div><a href="#footer-anchor">About</a></div>
+                <!-- 💡 참고: your-email@example.com 부분을 포트폴리오 주인분의 실제 이메일로 변경하세요. -->
                 <div><a href="mailto:your-email@example.com">Mail</a>, <a href="https://github.com/nadjasiza">GitHub</a></div>
             </div>
         </div>
@@ -138,7 +168,8 @@
         </div>
 
         <div class="column column-archive-2">
-            <div class="column-title" style="visibility: hidden;">II<br>Cont.</div>
+            <!-- 💡 추가됨: aria-hidden="true" 속성을 추가하여 스크린 리더 접근성 향상 -->
+            <div class="column-title" style="visibility: hidden;" aria-hidden="true">II<br>Cont.</div>
             <div class="item"><span class="item-num">9</span><span class="item-name">도시기획 연구<br>& 공유공간 조성</span><span class="item-year">2021-2018</span></div>
             <div class="item"><span class="item-num">10</span><span class="item-name">로컬 임팩트 사업<br>기획 & 운영</span><span class="item-year">2021-2019</span></div>
         </div>
@@ -202,6 +233,7 @@
             <span class="sidebar-name">Eunbyeol SONG</span>
             <div class="sidebar-links">
                 <div><a href="#top">About</a></div>
+                <!-- 💡 참고: 여기에도 이메일 주소를 수정해야 합니다. -->
                 <div><a href="mailto:your-email@example.com">Mail</a>, <a href="https://github.com/nadjasiza">GitHub</a></div>
             </div>
         </div>
